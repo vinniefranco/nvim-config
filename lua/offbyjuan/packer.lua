@@ -16,10 +16,10 @@ return require("packer").startup(function(use)
 
   -- Color handling fu
   use({
-    "rose-pine/neovim",
-    as = "rose-pine",
+    "folke/tokyonight.nvim",
+    as = "tokyonight",
     config = function()
-      vim.cmd("colorscheme rose-pine")
+      vim.cmd("colorscheme tokyonight")
     end
   })
 
@@ -45,6 +45,7 @@ return require("packer").startup(function(use)
     config = function()
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end
+
   }
 
   -- Nav fu
@@ -60,9 +61,6 @@ return require("packer").startup(function(use)
     event = "BufRead"
   })
 
-  use { "tpope/vim-surround",
-    keys = { "c", "d", "y" } }
-
   use {
     "aserowy/tmux.nvim",
     config = function()
@@ -73,6 +71,8 @@ return require("packer").startup(function(use)
           -- enables copy sync and overwrites all register actions to
           -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
           enable = true,
+
+          ignore_buffers = { empty = false },
         },
         navigation = {
           -- enables default keybindings (C-hjkl) for normal mode
@@ -84,6 +84,11 @@ return require("packer").startup(function(use)
         }
       })
     end
+  }
+
+  use {
+    "tpope/vim-surround",
+    keys = { "c", "d", "y" }
   }
 
   use {

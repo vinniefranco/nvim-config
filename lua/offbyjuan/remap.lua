@@ -1,5 +1,4 @@
 vim.g.mapleader = ","
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
  -- Better window movement
 vim.keymap.set("n", "<C-h>", "<C-w>h")

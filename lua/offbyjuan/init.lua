@@ -40,5 +40,5 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrePlugin = 1
 
 -- These bad bois need to be loaded after disabling netrw
-require("offbyjuan.remap")
 require("offbyjuan.packer")
+require("offbyjuan.remap")
