@@ -9,19 +9,20 @@ return require("packer").startup(function(use)
     "nvim-telescope/telescope.nvim", tag = "0.1.0",
     requires = { { "nvim-lua/plenary.nvim" } }
   }
+
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   }
 
   -- Color handling fu
-  use({
+  use {
     "folke/tokyonight.nvim",
     as = "tokyonight",
     config = function()
       vim.cmd("colorscheme tokyonight")
     end
-  })
+  }
 
   -- Status line fu
   use {
@@ -56,10 +57,10 @@ return require("packer").startup(function(use)
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     }
   }
-  use({
+  use {
     "ggandor/lightspeed.nvim",
     event = "BufRead"
-  })
+  }
 
   use {
     "aserowy/tmux.nvim",
