@@ -1,3 +1,13 @@
+require("telescope").setup({
+  defaults = {
+    layout_stategy = "horizontal",
+    layout_config = {
+      width = 0.7,
+      prompt_position = "top"
+    }
+  }
+})
+
 require("telescope").load_extension("fzf")
 
 local builtin = require("telescope.builtin")

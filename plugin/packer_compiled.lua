@@ -168,6 +168,12 @@ _G.packer_plugins = {
     path = "/home/vinnie/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-tundra"] = {
+    config = { "\27LJ\2\n¢\6\0\0\5\0001\0E6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0004\4\0\0=\4\a\0034\4\0\0=\4\b\3=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0034\4\0\0=\4\15\0035\4\16\0=\4\17\0034\4\0\0=\4\18\0034\4\0\0=\4\19\0034\4\0\0=\4\20\0034\4\0\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0034\4\0\0=\4\26\0034\4\0\0=\4\27\0035\4\28\0=\4\29\3=\3\30\0025\3\31\0004\4\0\0=\4 \0034\4\0\0=\4!\0034\4\0\0=\4\"\0034\4\0\0=\4#\3=\3$\0025\3%\0=\3&\0025\3'\0004\4\0\0=\4(\0034\4\0\0=\4)\3=\3*\2B\0\2\0016\0+\0009\0,\0'\1.\0=\1-\0006\0+\0009\0/\0'\0020\0B\0\2\1K\0\1\0\23colorscheme tundra\bcmd\tdark\15background\bopt\bvim\14overwrite\15highlights\vcolors\1\0\0\fplugins\1\0\b\rnvimtree\2\rgitsigns\2\blsp\2\15treesitter\2\bcmp\2\tdbui\2\fcontext\2\14telescope\2\16diagnostics\nhints\16information\rwarnings\verrors\1\0\0\vsyntax\ntypes\1\0\1\vitalic\2\fstrings\16punctuation\14operators\1\0\1\tbold\2\fnumbers\1\0\1\tbold\2\nloops\rkeywords\14functions\vfields\14constants\1\0\1\tbold\2\17conditionals\rcomments\1\0\2\tbold\2\vitalic\2\rbooleans\1\0\0\1\0\2\tbold\2\vitalic\2\veditor\15substitute\vsearch\1\0\0\25dim_inactive_windows\1\0\1\fenabled\1\1\0\1\27transparent_background\1\nsetup\16nvim-tundra\frequire\0" },
+    loaded = true,
+    path = "/home/vinnie/.local/share/nvim/site/pack/packer/start/nvim-tundra",
+    url = "https://github.com/sam4llis/nvim-tundra"
+  },
   ["nvim-web-devicons"] = {
     loaded = false,
     needs_bufread = false,
@@ -204,12 +210,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vinnie/.local/share/nvim/site/pack/packer/start/tmux.nvim",
     url = "https://github.com/aserowy/tmux.nvim"
-  },
-  tokyonight = {
-    config = { "\27LJ\2\n{\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\bvim\1\0\1\16transparent\2\nsetup\15tokyonight\frequire\0" },
-    loaded = true,
-    path = "/home/vinnie/.local/share/nvim/site/pack/packer/start/tokyonight",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   undotree = {
     loaded = true,
@@ -255,18 +255,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: tokyonight
-time([[Config for tokyonight]], true)
-try_loadstring("\27LJ\2\n{\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\bvim\1\0\1\16transparent\2\nsetup\15tokyonight\frequire\0", "config", "tokyonight")
-time([[Config for tokyonight]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
-time([[Config for hop.nvim]], false)
+-- Config for: nvim-tundra
+time([[Config for nvim-tundra]], true)
+try_loadstring("\27LJ\2\n¢\6\0\0\5\0001\0E6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0004\4\0\0=\4\a\0034\4\0\0=\4\b\3=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0034\4\0\0=\4\15\0035\4\16\0=\4\17\0034\4\0\0=\4\18\0034\4\0\0=\4\19\0034\4\0\0=\4\20\0034\4\0\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0034\4\0\0=\4\26\0034\4\0\0=\4\27\0035\4\28\0=\4\29\3=\3\30\0025\3\31\0004\4\0\0=\4 \0034\4\0\0=\4!\0034\4\0\0=\4\"\0034\4\0\0=\4#\3=\3$\0025\3%\0=\3&\0025\3'\0004\4\0\0=\4(\0034\4\0\0=\4)\3=\3*\2B\0\2\0016\0+\0009\0,\0'\1.\0=\1-\0006\0+\0009\0/\0'\0020\0B\0\2\1K\0\1\0\23colorscheme tundra\bcmd\tdark\15background\bopt\bvim\14overwrite\15highlights\vcolors\1\0\0\fplugins\1\0\b\rnvimtree\2\rgitsigns\2\blsp\2\15treesitter\2\bcmp\2\tdbui\2\fcontext\2\14telescope\2\16diagnostics\nhints\16information\rwarnings\verrors\1\0\0\vsyntax\ntypes\1\0\1\vitalic\2\fstrings\16punctuation\14operators\1\0\1\tbold\2\fnumbers\1\0\1\tbold\2\nloops\rkeywords\14functions\vfields\14constants\1\0\1\tbold\2\17conditionals\rcomments\1\0\2\tbold\2\vitalic\2\rbooleans\1\0\0\1\0\2\tbold\2\vitalic\2\veditor\15substitute\vsearch\1\0\0\25dim_inactive_windows\1\0\1\fenabled\1\1\0\1\27transparent_background\1\nsetup\16nvim-tundra\frequire\0", "config", "nvim-tundra")
+time([[Config for nvim-tundra]], false)
 -- Config for: tmux.nvim
 time([[Config for tmux.nvim]], true)
 try_loadstring("\27LJ\2\n×\1\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\vresize\1\0\1\31enable_default_keybindings\2\15navigation\1\0\1\31enable_default_keybindings\2\14copy_sync\1\0\0\19ignore_buffers\1\0\1\nempty\1\1\0\1\venable\2\nsetup\ttmux\frequire\0", "config", "tmux.nvim")
 time([[Config for tmux.nvim]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
@@ -292,18 +292,18 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> d <cmd>lua require("packer.load")({'vim-surround'}, { keys = "d", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> y <cmd>lua require("packer.load")({'vim-surround'}, { keys = "y", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> c <cmd>lua require("packer.load")({'vim-surround'}, { keys = "c", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> y <cmd>lua require("packer.load")({'vim-surround'}, { keys = "y", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> d <cmd>lua require("packer.load")({'vim-surround'}, { keys = "d", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au CursorMoved * ++once lua require("packer.load")({'vim-matchup'}, { event = "CursorMoved *" }, _G.packer_plugins)]]
 vim.cmd [[au BufEnter *_test.*,*_spec.* ++once lua require("packer.load")({'vim-test'}, { event = "BufEnter *_test.*,*_spec.*" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'lightspeed.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au CursorMoved * ++once lua require("packer.load")({'vim-matchup'}, { event = "CursorMoved *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

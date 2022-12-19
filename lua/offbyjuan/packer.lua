@@ -15,17 +15,10 @@ return require("packer").startup(function(use)
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   }
 
+
   -- Color handling fu
   use {
-    "folke/tokyonight.nvim",
-    as = "tokyonight",
-    config = function()
-      require("tokyonight").setup({
-        transparent = true
-      })
-
-      vim.cmd("colorscheme tokyonight")
-    end
+    "sam4llis/nvim-tundra",
   }
 
   -- Status line fu
