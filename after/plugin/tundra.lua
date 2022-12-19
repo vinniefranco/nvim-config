@@ -49,4 +49,4 @@ vim.opt.background = "dark"
 
 vim.cmd("colorscheme tundra")
 vim.cmd("hi clear SpellBad")
-vim.cmd("hi SpellBad cterm=underline")
+vim.cmd("hi SpellBad cterm=underline gui=Undercurl guisp=Red")
