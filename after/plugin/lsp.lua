@@ -25,6 +25,14 @@ local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 -- Better mappings
 local cmp = require("cmp")
+cmp.setup({
+  sources = {
+    {
+      name = 'path',
+    },
+  },
+})
+
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
@@ -37,7 +45,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+  mapping = cmp_mappings,
 })
 
 cmp.event:on(
