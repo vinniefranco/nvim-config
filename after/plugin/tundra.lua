@@ -46,7 +46,5 @@ require('nvim-tundra').setup({
 })
 
 vim.opt.background = "dark"
-
-vim.cmd("colorscheme tundra")
-vim.cmd("hi clear SpellBad")
-vim.cmd("hi SpellBad cterm=underline gui=Undercurl guisp=Red")
+vim.cmd.colorscheme("tundra")
+vim.api.nvim_set_hl(0, "SpellBad", { bg = "none", undercurl = true })
