@@ -1,5 +1,9 @@
 local lsp = require('lsp-zero')
 
+require("nvim-autopairs").setup({
+  check_ts = true
+})
+
 lsp.preset('recommended')
 
 lsp.ensure_installed({
@@ -16,6 +20,10 @@ lsp.configure("sumeko_lua", {
   }
 })
 
+
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+-- Better mappings
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -23,11 +31,19 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
   ["<C-y>"] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
+  ["<CR"] = cmp.mapping.confirm(function(fallback)
+    fallback()
+  end)
 })
 
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })
+
+cmp.event:on(
+  "confirm_done",
+  cmp_autopairs.on_confirm_done({ map_char = { tex = "" } })
+)
 
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }

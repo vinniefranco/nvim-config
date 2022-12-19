@@ -43,6 +43,10 @@ return require("packer").startup(function(use)
   }
 
   use {
+    "RRethy/nvim-treesitter-endwise"
+  }
+
+  use {
     "andymass/vim-matchup",
     event = "CursorMoved",
     config = function()
