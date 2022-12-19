@@ -139,4 +139,7 @@ return require("packer").startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   }
+
+  -- AI fu
+  use { "aduros/ai.vim" }
 end)
