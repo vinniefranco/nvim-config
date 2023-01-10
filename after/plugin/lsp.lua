@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local luasnip = require("luasnip")
 
 require("nvim-autopairs").setup({
   check_ts = true
@@ -39,8 +40,13 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
   ["<C-y>"] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
-  ["<CR"] = cmp.mapping.confirm(function(fallback)
-    fallback()
+  ["<CR>"] = cmp.mapping.confirm({ select = false }),
+  ["<C-g>"] = cmp.mapping(function(fallback)
+    if luasnip.jumpable(1) then
+      luasnip.jump(1)
+    else
+      fallback()
+    end
   end)
 })
 
