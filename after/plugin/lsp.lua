@@ -7,9 +7,12 @@ require("nvim-autopairs").setup({
 
 lsp.preset('recommended')
 
+lsp.skip_server_setup({"rust_analyzer"})
+
 lsp.ensure_installed({
   "tsserver",
   "eslint",
+  "elixirls",
   "sumneko_lua"
 })
 
@@ -28,13 +31,6 @@ local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 -- Better mappings
 local cmp = require("cmp")
-cmp.setup({
-  sources = {
-    {
-      name = 'path',
-    },
-  },
-})
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -52,14 +48,14 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   end)
 })
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings,
-})
-
 cmp.event:on(
   "confirm_done",
   cmp_autopairs.on_confirm_done({ map_char = { tex = "" } })
 )
+
+lsp.setup_nvim_cmp({
+  mapping = cmp_mappings,
+})
 
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
@@ -74,6 +70,45 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>lrr", function() vim.lsp.buf.references() end, opts)
 end)
 
+lsp.nvim_workspace()
 lsp.setup()
 
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({async = false})]]
+local rt = require("rust-tools")
+local rust_lsp = lsp.build_options("rust_analyzer", {
+  on_attach = function(_, bufnr)
+        -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+  end
+})
+rt.setup({server = rust_lsp})
+
+local null_ls = require("null-ls")
+local null_opts = lsp.build_options("null-ls", {})
+
+null_ls.setup({
+  on_attach = function(client, bufnr)
+    null_opts.on_attach(client, bufnr)
+
+    local format_cmd = function(input)
+      vim.lsp.buf.format({
+        id = client.id,
+        timeout_ms = 5000,
+        async = input.bang,
+      })
+    end
+
+    local bufcmd = vim.api.nvim_buf_create_user_command
+    bufcmd(bufnr, 'NullFormat', format_cmd, {
+      bang = true,
+      range = true,
+      desc = 'Format using null-ls'
+    })
+  end,
+  sources = {
+    --- Replace these with the tools you have installed
+    null_ls.builtins.formatting.prettier,
+  }
+})
+

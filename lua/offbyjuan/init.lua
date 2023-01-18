@@ -23,6 +23,7 @@ vim.opt.spelllang = "en"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.tabstop = 2
+vim.opt.timeoutlen = 160
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 

@@ -1,6 +1,6 @@
 vim.g.mapleader = ","
 
- -- Better window movement
+-- Better window movement
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
@@ -17,3 +17,5 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Yank into system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
+
+vim.keymap.set("n", "<leader>'", ":LspZeroFormat<CR>")
