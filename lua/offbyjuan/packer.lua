@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
   -- Autocomplete for Neovim lua API
   use "folke/neodev.nvim"
 
+  -- Note taking fu
+  use "epwalsh/obsidian.nvim"
+
   -- Fuzzy finding fu
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.0",
