@@ -13,7 +13,6 @@ require 'nvim-treesitter.configs'.setup {
     "lua",
     "rust",
     "typescript"
-
   },
 
   autopairs = {
